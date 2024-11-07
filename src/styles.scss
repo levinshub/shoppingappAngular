@@ -3,3 +3,93 @@
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 @import "./css/mixins.scss";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+p{
+    margin-bottom: 0px !important;
+}
+
+.owl-carousel.owl-drag .owl-item{
+    padding: 5px;
+}
+.alignCenter{
+    align-items: center;
+}
+.addToCartBtn{
+    background-color: red;
+    /* border-color: red; */
+    border-radius: 30px;
+    color: #ffffff;
+    box-shadow: none;
+    border: 1px solid red;
+    font-size: 14px;
+    padding: 4px 12px;
+}
+.buyNowBtn {
+    background-color: red;
+    /* border-color: red; */
+    border-radius: 30px;
+    color: #ffffff;
+    box-shadow: none;
+    border: 1px solid red;
+    font-size: 14px;
+    padding: 4px 12px;
+}
+.disPrice{
+    text-decoration: line-through;
+    font-size: 16px;
+    color: grey;
+}
+.discountPercent{
+    background: green;
+    color: #ffffff;
+    padding: 1px 4px;
+    font-weight: 500;
+    font-size: 11px;
+    border-radius: 3px;
+}
+.actPrice{
+    font-weight: 600;
+    font-size: 16px;
+}
+.bi-currency-rupee::before {
+    content: "\f7ec";
+    font-size: 14px !important;
+    // font-weight: bold !important;
+    // color: gray;
+}
+.proImage{
+    width: 100%;
+    border-radius: 10px;
+}
+.catImage{
+    width: 80px;
+    padding: 10px;
+    border-radius: 16px;
+}
+
+.catCard{
+    background-color: #fbfbfb;
+}
+.catName{
+    font-size: 18px;
+    padding: 10px;
+    // font-weight: 600;
+}
+.space-b{
+    justify-content: space-between;
+}
+
+.bi-heart::before {
+    font-size: 16px;
+    // font-weight: bold !important;
+    cursor: pointer;  
+}
+// .bi-heart{
+//     border: 1px solid;
+//     border-radius: 5px;
+//     padding: 2px 5px;
+// }
+.productcard{
+    cursor: pointer;
+}

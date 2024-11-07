@@ -5,213 +5,72 @@
         </ng-template>
     </owl-carousel-o>
 </div>
-<div class="row mt-30">
-    <div class="mt-20 mb-20">
-        <h2 class="text-center">Hot Sales</h2>
+<div class="container">
+    <div class="row">
+        <div class="mt-20 mb-20">
+            <h2 class="text-center">Hot Sales</h2>
+        </div>
+        <div>
+            <owl-carousel-o [options]="customHotSalesOptions">
+                <ng-template carouselSlide *ngFor="let image of productImages" [id]="image.id">
+                    <div class="productcard">
+                        <img class="proImage" [src]="image.image">
+                        <div class="card-body mt-5">
+                            <p class="card-title">{{image.name}}</p>
+                            <div class="d-flex alignCenter mt-2">
+                                <p class="actPrice mr-6"><i class="bi bi-currency-rupee"></i>{{image.discountPrice}}</p>
+                                <p class="disPrice mr-5">{{image.actualPrice}}</p>
+                                <span class="discountPercent">{{image.discountPercent}}</span>
+                            </div>
+                            <div class="card_footer d-flex alignCenter mt-10">
+                                <button class="addToCartBtn mr-10">Add to cart</button>
+                                <button class="buyNowBtn">Buy now</button>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
     </div>
-    <div class="col-lg-3">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="row">
+        <div class="mt-20">
+            <h2 class="text-center">Shop by category</h2>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-4 col-6 mt-30" *ngFor="let image of catImages" [id]="image.id">
+            <div class="card catCard">
+                <div class="d-flex alignCenter">
+                    <img class="catImage" [src]="image.image">
+                    <p class="catName ml-15">{{image.name}}</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-3">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container">
+        <div class="row">
+            <div class="mt-20">
+                <h2 class="text-center">All Products</h2>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-6 mt-30" *ngFor="let image of productImages" [id]="image.id">
+                <div class="productcard"  (click)="viewProduct(image.id)">
+                    <img class="proImage" [src]="image.image">
+                    <div class="card-body mt-5">
+                        <p class="card-title">{{image.name}}</p>
+                        <div class="d-flex alignCenter mt-2">
+                            <p class="actPrice mr-6"><i class="bi bi-currency-rupee"></i>{{image.discountPrice}}</p>
+                            <p class="disPrice mr-5">{{image.actualPrice}}</p>
+                            <span class="discountPercent">{{image.discountPercent}}</span>
+                        </div>
+                        <div class="card_footer d-flex alignCenter space-b mt-10">
+                            <div>
+                            <button (click)="addToCart(image.id) ; $event.stopPropagation()" class="addToCartBtn mr-10">Add to cart</button>
+                            <button  (click)="addToCart(image.id) ; $event.stopPropagation()" class="buyNowBtn">Buy now</button>
+                        </div>
+                            <div  (click)="addToCart(image.id) ; $event.stopPropagation()">
+                                <i class="bi bi-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-3">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row mt-30">
-    <div class="mt-20 mb-20">
-        <h2 class="text-center">All Products</h2>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 mt-20">
-        <div class="card">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- <div>
-    <owl-carousel-o [options]="customHotSalesOptions">
-        <ng-template carouselSlide>Slide 1</ng-template>
-        <ng-template carouselSlide>Slide 2</ng-template>
-        <ng-template carouselSlide>Slide 3</ng-template>
-        <ng-template carouselSlide>Slide 3</ng-template>
-    </owl-carousel-o>
-</div> -->
