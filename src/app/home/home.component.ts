@@ -184,6 +184,9 @@ export class HomeComponent implements OnInit {
       },
       940: {
         items: 5
+      },
+      1200: {
+        items: 6
       }
     },
     nav: true

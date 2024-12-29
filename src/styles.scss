@@ -16,14 +16,15 @@ p{
     align-items: center;
 }
 .addToCartBtn{
-    background-color: red;
+    background-color: #ffffff;
     /* border-color: red; */
     border-radius: 30px;
-    color: #ffffff;
+    color: red;
     box-shadow: none;
-    border: 1px solid red;
+    border: 2px solid red;
     font-size: 14px;
-    padding: 4px 12px;
+    font-weight: 500;
+    padding: 7px 14px;
 }
 .buyNowBtn {
     background-color: red;
@@ -33,7 +34,8 @@ p{
     box-shadow: none;
     border: 1px solid red;
     font-size: 14px;
-    padding: 4px 12px;
+    font-weight: 500;
+    padding: 7px 14px;
 }
 .disPrice{
     text-decoration: line-through;
